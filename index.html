@@ -3,93 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>congtuhaixinhzai | Portfolio</title>
+    <title>congtuhaixinhzai | Profile</title>
     <link rel="icon" href="https://raw.githubusercontent.com/congtuhaixinhzai/congtuhaixinhzai.github.io/congtuhaixinhzai.github.io/refs/heads/main/img/gif/gifwaifu.gif">
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="UI/style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/gifwaifu.gif?raw=true" width="40"></div>
-        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/meongheo.gif?raw=true" width="50"></div>
-        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/lolimusic.gif?raw=true" width="60"></div>
-        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/dance.gif?raw=true" width="40"></div>
-        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/bb.gif?raw=true" width="40"></div>
-    </div>
+    <div class="background-animation"></div>
 
-    <nav class="navbar">
-        <div class="logo">congtuhaixinhzai.github.io</div>
-        <div class="nav-links">
-            <a href="#projects">Dự án</a>
-            <a href="#contact">Liên hệ</a>
+    <div class="profile-card fade-in">
+        <div class="avatar-container">
+            <img src="https://avatars.githubusercontent.com/u/137310130?v=4" alt="Avatar" class="main-avatar">
+            <div class="status-dot"></div>
         </div>
-    </nav>
 
-    <main class="container">
-        <section id="about" class="hero-section fade-in">
-            <div class="avatar-wrapper">
-                <img src="https://avatars.githubusercontent.com/u/137310130?v=4" alt="Avatar" class="avatar">
-            </div>
-            <div class="hero-content">
-                <h1>Xin chào 👋</h1>
-                <h2 class="name-highlight">Mình là Hải Chíp</h2>
-                <p class="bio">
-                    Thằng nhóc đam mê công nghệ, luôn phá hoại và sáng tạo. <br>
-                    Hiện đang theo đuổi con đường lập trình với tinh thần không ngừng học hỏi và đổi mới.
-                </p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">Dự án</a>
-                    <a href="#contact" class="btn btn-outline">Liên hệ</a>
-                </div>
-            </div>
-        </section>
-
-        <h2 class="section-title">🔥 DỰ ÁN CỦA MÌNH 🔥</h2>
-
-        <section id="projects" class="projects-grid fade-in">
-            <div class="project-card">
-                <div class="card-banner">
-                    <img src="https://raw.githubusercontent.com/congtuhaixinhzai/congtuhaixinhzai.github.io/me/refs/heads/main/photo_2024-10-25_21-22-15.jpg" alt="Mini Store">
-                </div>
-                <h3>Mini Store</h3>
-                <p>App Store tối giản, giao diện thân thiện.</p>
-                <button class="btn-detail" onclick="window.open('https://fpstheos.haininh.site', '_blank')">Chi tiết</button>
+        <div class="info-content">
+            <h1 class="logo-text">congtuhaixinhzai.github.io</h1>
+            <h2 class="name-gradient">Hải Chíp 👋</h2>
+            <p class="tagline">Developer & Tech Enthusiast</p>
+            
+            <div class="bio-box">
+                "Thằng nhóc đam mê công nghệ, luôn phá hoại và sáng tạo. Hiện đang theo đuổi con đường lập trình với tinh thần không ngừng học hỏi."
             </div>
 
-            <div class="project-card">
-                <div class="card-banner blue-glow">
-                    <div class="banner-placeholder">Cheat AOV Store</div>
-                </div>
-                <h3>Cheat AOV Store</h3>
-                <p>Trang Web mua key cho Cheat AOV.</p>
-                <button class="btn-detail" onclick="window.open('https://github.com/congtuhaixinhzai/hackstore/', '_blank')">Chi tiết</button>
+            <div class="social-grid">
+                <a href="https://facebook.com/weansios" class="social-item" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/congtuhaixinhzai" class="social-item" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/congtuhaixinhzai" class="social-item" target="_blank"><i class="fab fa-telegram"></i></a>
             </div>
 
-            <div class="project-card">
-                <div class="card-banner telegram-glow">
-                    <i class="fab fa-telegram"></i>
-                    <span>Telegram</span>
-                </div>
-                <h3>Tiện ích Telegram</h3>
-                <p>Kênh Telegram chia sẻ tool iOS.</p>
-                <button class="btn-detail" onclick="window.open('https://t.me/congtuhaixinhzai', '_blank')">Chi tiết</button>
+            <div class="action-buttons">
+                <a href="https://github.com/congtuhaixinhzai" class="btn btn-glow">MY PROJECTS</a>
+                <a href="https://t.me/congtuhaixinhzai" class="btn btn-glass">CONTACT ME</a>
             </div>
-        </section>
-
-        <section id="contact" class="contact-section fade-in">
-            <h2 class="section-title">Liên Hệ</h2>
-            <div class="social-links">
-                <a href="https://facebook.com/weansios" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                <a href="https://github.com/congtuhaixinhzai" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://t.me/congtuhaixinhzai" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 congtuhaixinhzai.github.io - Thiết kế bởi Hải Chíp</p>
-    </footer>
-
-    <script src="/UI/script.js"></script>
+        </div>
+    </div>
 </body>
 </html>
