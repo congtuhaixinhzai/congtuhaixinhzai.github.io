@@ -1,14 +1,9 @@
-name: Generate Snake - Ultimate Version 🚀
+name: Generate Snake
 
 on:
   schedule:
-    # Tự động chạy mỗi 12 tiếng để cập nhật tiến độ (00:00 và 12:00)
     - cron: "0 */12 * * *"
-  
-  # Cho phép ông bấm nút "Run workflow" bất cứ lúc nào
   workflow_dispatch:
-
-  # Chạy ngay lập tức mỗi khi ông push code mới vào nhánh chính
   push:
     branches:
       - main
@@ -22,26 +17,24 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      # Bước 1: Checkout code
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Bước 2: Tạo con rắn với hiệu ứng và màu sắc tùy chỉnh
-      # Bản này hỗ trợ cả chế độ Light và Dark mode cho GitHub
-      - name: Generate the snake content 🐍
+      - name: Generate Snake content 🐍
         uses: Platane/snk@v3
         with:
           github_user_name: congtuhaixinhzai
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#A970FF&color_dots=#161b22,#4b2e83,#6344ad,#7d59ce,#976ef1
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#A970FF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Bước 3: Đẩy ảnh vào nhánh output
-      - name: Push Snake to Output Branch ⬆️
+      - name: Push to Output Branch ⬆️
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
-          commit_message: "🎨 Update Snake Animation
+          commit_message: "Update Snake Animation"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
