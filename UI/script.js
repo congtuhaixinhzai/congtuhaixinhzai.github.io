@@ -1,41 +1,34 @@
-// Đợi cho DOM tải xong mới thực thi
 document.addEventListener('DOMContentLoaded', () => {
-    // Tạo container cho hoa rơi nếu chưa có trong HTML
-    let snowflakeContainer = document.getElementById('snowflakeContainer');
-    
-    if (!snowflakeContainer) {
-        snowflakeContainer = document.createElement('div');
-        snowflakeContainer.id = 'snowflakeContainer';
-        document.body.appendChild(snowflakeContainer);
-    }
+    const container = document.getElementById('snowflakeContainer');
 
-    // Hàm tạo hoa rơi
-    function createSnowflake() {
-        const snowflake = document.createElement('p');
-        snowflake.className = 'snowflake';
-        snowflake.textContent = '🌸'; // Bạn có thể đổi icon tùy thích
+    function createFlower() {
+        const flower = document.createElement('div');
+        flower.className = 'snowflake';
+        flower.innerHTML = '🌸'; // Bạn có thể thay bằng ❄️ nếu muốn tuyết
 
-        // Vị trí và kích thước ngẫu nhiên
-        snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.fontSize = 15 + Math.random() * 20 + 'px';
+        // Ngẫu nhiên các thuộc tính
+        const startX = Math.random() * 100;
+        const size = 15 + Math.random() * 20;
+        const duration = 10 + Math.random() * 15;
+        const delay = Math.random() * 5;
 
-        // Thời gian và tốc độ rơi ngẫu nhiên (15s - 25s để tạo cảm giác chậm rãi)
-        const fallDuration = 15 + Math.random() * 10;
-        snowflake.style.animationDuration = fallDuration + 's';
-        snowflake.style.animationDelay = Math.random() * 5 + 's';
-        snowflake.style.opacity = 0.5 + Math.random() * 0.5;
+        flower.style.left = startX + 'vw';
+        flower.style.fontSize = size + 'px';
+        flower.style.animationDuration = duration + 's';
+        flower.style.animationDelay = delay + 's';
+        flower.style.opacity = Math.random();
 
-        snowflakeContainer.appendChild(snowflake);
+        container.appendChild(flower);
 
-        // Xóa hoa khi rơi xong và tạo lại để duy trì hiệu ứng liên tục
+        // Xóa sau khi rơi xong để tiết kiệm tài nguyên
         setTimeout(() => {
-            snowflake.remove();
-            createSnowflake();
-        }, (fallDuration + 5) * 1000); 
+            flower.remove();
+            createFlower(); // Tạo lại hoa mới
+        }, (duration + delay) * 1000);
     }
 
-    // Khởi tạo 10 hoa ban đầu
-    for (let i = 0; i < 10; i++) {
-        setTimeout(createSnowflake, i * 500);
+    // Khởi tạo 12 bông hoa lúc đầu
+    for (let i = 0; i < 12; i++) {
+        setTimeout(createFlower, i * 600);
     }
 });
