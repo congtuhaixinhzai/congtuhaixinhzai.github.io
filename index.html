@@ -3,148 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>congtuhaixinhzai | Profile</title>
+    <title>congtuhaixinhzai | Portfolio</title>
     <link rel="icon" href="https://raw.githubusercontent.com/congtuhaixinhzai/congtuhaixinhzai.github.io/congtuhaixinhzai.github.io/refs/heads/main/img/gif/gifwaifu.gif">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        /* CSS NÂNG CẤP TRỰC TIẾP TẠI ĐÂY */
-        :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --accent: #f093fb;
-            --bg-dark: #02050a;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-
-        body {
-            background-color: var(--bg-dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            color: white;
-            background: radial-gradient(circle at center, #0a192f 0%, #02050a 100%);
-        }
-
-        /* Profile Card - Hiệu ứng kính mờ */
-        .profile-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 40px;
-            padding: 60px 40px;
-            text-align: center;
-            width: 90%;
-            max-width: 420px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 1.2s ease;
-        }
-
-        /* Avatar phát sáng */
-        .avatar-container {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 30px;
-        }
-
-        .main-avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary);
-            box-shadow: 0 0 40px rgba(0, 242, 254, 0.5);
-            padding: 5px;
-            transition: 0.5s;
-        }
-
-        .main-avatar:hover { transform: scale(1.1) rotate(5deg); }
-
-        .name-gradient {
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .bio-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #ccd6f6;
-            margin-bottom: 30px;
-        }
-
-        /* Nút bấm Neon */
-        .action-buttons { display: flex; gap: 15px; }
-
-        .btn {
-            flex: 1;
-            padding: 14px;
-            border-radius: 15px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .btn-glow {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: #02050a;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
-        }
-
-        .btn-glass {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-
-        .btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
-
-        /* Icon bay hiệu ứng trang trí */
-        .decor-icon { position: absolute; width: 40px; opacity: 0.8; animation: float 4s ease-in-out infinite; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
 <body>
-
-    <div class="profile-card">
-        <div class="avatar-container">
-            <img src="https://avatars.githubusercontent.com/u/137310130?v=4" alt="Avatar" class="main-avatar">
-        </div>
-
-        <h1 style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.6; margin-bottom: 5px;">CONGTUHAIXINHZAI.GITHUB.IO</h1>
-        <h2 class="name-gradient">Hải Chíp 👋</h2>
-        
-        <div class="bio-box">
-            "Thằng nhóc đam mê công nghệ, luôn phá hoại và sáng tạo. Hiện đang theo đuổi con đường lập trình với tinh thần không ngừng đổi mới."
-        </div>
-
-        <div class="action-buttons">
-            <a href="https://github.com/congtuhaixinhzai" class="btn btn-glow">MY GITHUB</a>
-            <a href="https://t.me/congtuhaixinhzai" class="btn btn-glass">CONTACT</a>
-        </div>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/gifwaifu.gif?raw=true" width="40"></div>
+        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/meongheo.gif?raw=true" width="50"></div>
+        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/lolimusic.gif?raw=true" width="60"></div>
+        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/dance.gif?raw=true" width="40"></div>
+        <div class="snowflake"><img src="https://github.com/congtuhaixinhzai/congtuhaixinhzai.github.io/blob/main/IMG/gif/bb.gif?raw=true" width="40"></div>
     </div>
 
+    <nav class="navbar">
+        <div class="logo">congtuhaixinhzai.github.io</div>
+        <div class="nav-links">
+            <a href="#projects">Dự án</a>
+            <a href="#contact">Liên hệ</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="hero-section fade-in">
+            <div class="avatar-wrapper">
+                <img src="https://avatars.githubusercontent.com/u/137310130?v=4" alt="Avatar" class="avatar">
+            </div>
+            <div class="hero-content">
+                <h1>Xin chào 👋</h1>
+                <h2 class="name-highlight">Mình là Hải Chíp</h2>
+                <p class="bio">
+                    Thằng nhóc đam mê công nghệ, luôn phá hoại và sáng tạo. <br>
+                    Hiện đang theo đuổi con đường lập trình với tinh thần không ngừng học hỏi và đổi mới.
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">Dự án</a>
+                    <a href="#contact" class="btn btn-outline">Liên hệ</a>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title">🔥 DỰ ÁN CỦA MÌNH 🔥</h2>
+
+        <section id="projects" class="projects-grid fade-in">
+            <div class="project-card">
+                <div class="card-banner">
+                    <img src="https://raw.githubusercontent.com/congtuhaixinhzai/congtuhaixinhzai.github.io/me/refs/heads/main/photo_2024-10-25_21-22-15.jpg" alt="Mini Store">
+                </div>
+                <h3>Mini Store</h3>
+                <p>App Store tối giản, giao diện thân thiện.</p>
+                <button class="btn-detail" onclick="window.open('https://fpstheos.haininh.site', '_blank')">Chi tiết</button>
+            </div>
+
+            <div class="project-card">
+                <div class="card-banner blue-glow">
+                    <div class="banner-placeholder">Cheat AOV Store</div>
+                </div>
+                <h3>Cheat AOV Store</h3>
+                <p>Trang Web mua key cho Cheat AOV.</p>
+                <button class="btn-detail" onclick="window.open('https://github.com/congtuhaixinhzai/hackstore/', '_blank')">Chi tiết</button>
+            </div>
+
+            <div class="project-card">
+                <div class="card-banner telegram-glow">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </div>
+                <h3>Tiện ích Telegram</h3>
+                <p>Kênh Telegram chia sẻ tool iOS.</p>
+                <button class="btn-detail" onclick="window.open('https://t.me/congtuhaixinhzai', '_blank')">Chi tiết</button>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section fade-in">
+            <h2 class="section-title">Liên Hệ</h2>
+            <div class="social-links">
+                <a href="https://facebook.com/weansios" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://github.com/congtuhaixinhzai" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://t.me/congtuhaixinhzai" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 congtuhaixinhzai.github.io - Thiết kế bởi Hải Chíp</p>
+    </footer>
+
+    <script src="/UI/script.js"></script>
 </body>
 </html>
