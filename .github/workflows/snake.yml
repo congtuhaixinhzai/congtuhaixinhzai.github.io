@@ -1,8 +1,8 @@
-name: Generate Snake
+name: Generate Snake Professional
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */12 * * *" # Tự động chạy mỗi 12 giờ
   workflow_dispatch:
   push:
     branches:
@@ -20,21 +20,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Generate Snake content 🐍
+      - name: Generate Snake Animation 🐍
         uses: Platane/snk@v3
         with:
           github_user_name: congtuhaixinhzai
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#A970FF
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#A970FF&color_dots=#161b22,#4b2e83,#6344ad,#7d59ce,#976ef1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push to Output Branch ⬆️
+      - name: Deploy to Output Branch 🚀
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
-          commit_message: "Update Snake Animation"
+          commit_message: "🎨 Professional Snake Update [Skip CI]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
