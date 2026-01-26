@@ -5,48 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>congtuhaixinhzai | Profile</title>
     <link rel="icon" href="https://raw.githubusercontent.com/congtuhaixinhzai/congtuhaixinhzai.github.io/congtuhaixinhzai.github.io/refs/heads/main/img/gif/gifwaifu.gif">
-    <link rel="stylesheet" href="UI/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS NÂNG CẤP TRỰC TIẾP TẠI ĐÂY */
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent: #f093fb;
+            --bg-dark: #02050a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: var(--bg-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            color: white;
+            background: radial-gradient(circle at center, #0a192f 0%, #02050a 100%);
+        }
+
+        /* Profile Card - Hiệu ứng kính mờ */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            padding: 60px 40px;
+            text-align: center;
+            width: 90%;
+            max-width: 420px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 1.2s ease;
+        }
+
+        /* Avatar phát sáng */
+        .avatar-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 30px;
+        }
+
+        .main-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 40px rgba(0, 242, 254, 0.5);
+            padding: 5px;
+            transition: 0.5s;
+        }
+
+        .main-avatar:hover { transform: scale(1.1) rotate(5deg); }
+
+        .name-gradient {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .bio-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #ccd6f6;
+            margin-bottom: 30px;
+        }
+
+        /* Nút bấm Neon */
+        .action-buttons { display: flex; gap: 15px; }
+
+        .btn {
+            flex: 1;
+            padding: 14px;
+            border-radius: 15px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-glow {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #02050a;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
+        .btn-glass {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
+
+        /* Icon bay hiệu ứng trang trí */
+        .decor-icon { position: absolute; width: 40px; opacity: 0.8; animation: float 4s ease-in-out infinite; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <div class="background-animation"></div>
 
-    <div class="profile-card fade-in">
+    <div class="profile-card">
         <div class="avatar-container">
             <img src="https://avatars.githubusercontent.com/u/137310130?v=4" alt="Avatar" class="main-avatar">
-            <div class="status-dot"></div>
         </div>
 
-        <div class="info-content">
-            <h1 class="logo-text">congtuhaixinhzai.github.io</h1>
-            <h2 class="name-gradient">Hải Chíp 👋</h2>
-            <p class="tagline">Developer & Tech Enthusiast</p>
-            
-            <div class="bio-box">
-                "Thằng nhóc đam mê công nghệ, luôn phá hoại và sáng tạo. Hiện đang theo đuổi con đường lập trình với tinh thần không ngừng học hỏi."
-            </div>
+        <h1 style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.6; margin-bottom: 5px;">CONGTUHAIXINHZAI.GITHUB.IO</h1>
+        <h2 class="name-gradient">Hải Chíp 👋</h2>
+        
+        <div class="bio-box">
+            "Thằng nhóc đam mê công nghệ, luôn phá hoại và sáng tạo. Hiện đang theo đuổi con đường lập trình với tinh thần không ngừng đổi mới."
+        </div>
 
-            <div class="social-grid">
-                <a href="https://facebook.com/weansios" class="social-item fb" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://github.com/congtuhaixinhzai" class="social-item gh" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://t.me/congtuhaixinhzai" class="social-item tg" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                </a>
-            </div>
-
-            <div class="action-buttons">
-                <button class="btn btn-glow" onclick="window.open('#')">MY PROJECTS</button>
-                <button class="btn btn-glass" onclick="window.open('https://t.me/congtuhaixinhzai')">CONTACT ME</button>
-            </div>
+        <div class="action-buttons">
+            <a href="https://github.com/congtuhaixinhzai" class="btn btn-glow">MY GITHUB</a>
+            <a href="https://t.me/congtuhaixinhzai" class="btn btn-glass">CONTACT</a>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Designed by <span class="highlight">Hải Chíp</span></p>
-    </footer>
 </body>
 </html>
