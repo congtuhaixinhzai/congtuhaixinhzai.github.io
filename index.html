@@ -3,58 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>congtuhaixinhzai | Profile Pro</title>
+    <title>Hải Chíp | Profile RGB</title>
     <link rel="icon" href="https://raw.githubusercontent.com/congtuhaixinhzai/congtuhaixinhzai.github.io/main/img/gif/gifwaifu.gif">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="UI/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/7dd86c08e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 </head>
 <body>
-    <div id="snowflakeContainer"></div>
-    <div class="background-animation"></div>
+    <canvas id="bgCanvas"></canvas>
 
-    <main class="profile-card fade-in">
-        <div class="avatar-container">
-            <img src="IMG/tomo-chan.jpg" alt="Avatar" class="main-avatar">
-            <div class="status-dot"></div>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="./" class="logo">
+                    <span>HẢI CHÍP<span class="dot"></span>
+                </a>
+                <nav class="nav">
+                    <a href="#contact">Liên hệ</a>
+                </nav>
+            </div>
         </div>
+    </header>
 
-        <div class="info-content">
-            <h1 class="name-gradient">Hải Chíp 👋</h1>
-            <p class="tagline">Developer & Tech Enthusiast</p>
-            
-            <div class="bio-box">
-                "Đam mê công nghệ, yêu thích lập trình Python và Home Assistant. Luôn không ngừng học hỏi để đổi mới bản thân."
+    <main class="hero fade-in">
+        <div class="profile-card">
+            <div class="rgb-border avatar-box">
+                <img src="IMG/tomo-chan.jpg" alt="Avatar" class="main-avatar">
+                <div class="status-dot"></div>
             </div>
 
-            <div class="link-grid">
-                <a href="https://zalo.me/your_phone" class="link-card" target="_blank">
-                    <div class="icon-box"><img src="IMG/zalo.png" alt="Zalo"></div>
-                    <span>Zalo</span>
-                </a>
-                <a href="https://github.com/congtuhaixinhzai" class="link-card" target="_blank">
-                    <div class="icon-box"><img src="IMG/github.png" alt="GitHub"></div>
-                    <span>GitHub</span>
-                </a>
-                <a href="#" class="link-card" target="_blank">
-                    <div class="icon-box"><img src="IMG/mbbank.png" alt="MBBank"></div>
-                    <span>MBBank</span>
-                </a>
-                <a href="https://t.me/congtuhaixinhzai" class="link-card" target="_blank">
-                    <div class="icon-box"><img src="IMG/telegram.png" alt="Telegram"></div>
-                    <span>Telegram</span>
-                </a>
-            </div>
+            <div class="info-content">
+                <h1 class="logo-text">Developer & Tech Enthusiast</h1>
+                <h2 class="name-gradient">Hải Chíp 👋</h2>
+                
+                <div class="bio-box">
+                    "Đam mê công nghệ, yêu thích lập trình Python và tùy chỉnh Home Assistant. Luôn không ngừng học hỏi để đổi mới bản thân."
+                </div>
 
-            <div class="action-buttons">
-                <a href="https://youtube.com/@Hải Chíp5013" class="btn btn-glass" target="_blank">YOUTUBE</a>
-                <a href="https://facebook.com/weansios" class="btn btn-glass" target="_blank">FACEBOOK</a>
+                <div class="link-grid">
+                    <a href="https://zalo.me/your_phone" class="link-card rgb-border" target="_blank">
+                        <div class="icon-box"><img src="IMG/zalo.png" alt="Zalo"></div>
+                        <span class="link-name">Zalo</span>
+                    </a>
+                    <a href="https://github.com/congtuhaixinhzai" class="link-card rgb-border" target="_blank">
+                        <div class="icon-box"><img src="IMG/github.png" alt="GitHub"></div>
+                        <span class="link-name">GitHub</span>
+                    </a>
+                    <a href="#" class="link-card rgb-border" target="_blank">
+                        <div class="icon-box"><img src="IMG/mbbank.png" alt="MBBank"></div>
+                        <span class="link-name">MBBank</span>
+                    </a>
+                    <a href="https://t.me/congtuhaixinhzai" class="link-card rgb-border" target="_blank">
+                        <div class="icon-box"><img src="IMG/telegram.png" alt="Telegram"></div>
+                        <span class="link-name">Telegram</span>
+                    </a>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="https://youtube.com/@Hải Chíp5013" class="btn-footer" target="_blank">YOUTUBE</a>
+                    <a href="https://facebook.com/@" class="btn-footer" target="_blank">FACEBOOK</a>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Designed by <span class="highlight">Hải Chíp</span></p>
-    </footer>
+    <section id="contact" class="contact">
+        <div class="contact-container rgb-border">
+            <div class="contact-inner-box">
+                <div class="contact-left">
+                    <img src="IMG/tomo-chan.jpg" alt="Avatar" class="contact-avatar">
+                    <div class="contact-info-text">
+                        <p><i class="fas fa-envelope"></i> congtuhaixinhzai@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +84.xxx.xxx</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="contact-right">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Tên của bạn" required>
+                        <textarea rows="3" placeholder="Nội dung" required></textarea>
+                        <button type="submit" class="btn-rgb">Gửi 💌</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 Hải Chíp — All rights reserved.</footer>
 
     <script src="UI/script.js"></script>
 </body>

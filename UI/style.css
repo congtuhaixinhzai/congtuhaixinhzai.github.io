@@ -1,97 +1,64 @@
 :root {
-    --primary: #00f2fe;
-    --secondary: #4facfe;
-    --accent: #f093fb;
     --bg-dark: #02050a;
+    --text-bright: #ffffff;
+    --neon-blue: #00f2fe;
+    --neon-pink: #f093fb;
 }
 
-* {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
+html { scroll-behavior: smooth; }
 
-body {
-    background-color: var(--bg-dark);
-    display: flex; justify-content: center; align-items: center;
-    min-height: 100vh; overflow: hidden; color: white;
-}
+body { background-color: var(--bg-dark); color: var(--text-bright); overflow-x: hidden; }
 
-.background-animation {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at center, #0a192f 0%, #02050a 100%);
-    z-index: -1;
-}
+#bgCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
 
-.profile-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 40px;
-    padding: 40px 25px;
-    text-align: center;
-    width: 95%; max-width: 400px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-}
+/* Header Chữ Sáng */
+.header { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(2, 5, 10, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; }
+.logo { text-decoration: none; color: white; font-weight: 800; }
+.dot { color: var(--neon-blue); }
+.nav a { text-decoration: none; color: white; font-size: 0.9rem; font-weight: bold; text-shadow: 0 0 10px var(--neon-blue); }
 
-/* Avatar */
-.avatar-container {
-    position: relative; width: 120px; height: 120px; margin: 0 auto 15px;
-}
-.main-avatar {
-    width: 100%; height: 100%; border-radius: 25px;
-    object-fit: cover; border: 3px solid var(--primary);
-}
+/* RGB Border Core */
+.rgb-border { position: relative; padding: 3px; overflow: hidden; background: rgba(255, 255, 255, 0.05); }
+.rgb-border::before { content: ''; position: absolute; width: 200%; height: 200%; background: conic-gradient(#ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000); animation: rotate-rgb 4s linear infinite; }
+.rgb-border::after { content: ''; position: absolute; inset: 3px; background: #0d1117; z-index: 1; }
+@keyframes rotate-rgb { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-.name-gradient {
-    font-size: 2rem; font-weight: 800;
-    background: linear-gradient(45deg, var(--primary), var(--accent));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
+/* Profile Card */
+.hero { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 100px 20px; }
+.profile-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border-radius: 40px; padding: 40px; width: 100%; max-width: 420px; text-align: center; border: 1px solid rgba(255,255,255,0.1); z-index: 10; }
 
-/* GRID 4 Ô */
-.link-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 15px; margin: 20px 0;
-}
+.avatar-box { width: 130px; height: 130px; margin: 0 auto 20px; border-radius: 30px; }
+.avatar-box::after, .main-avatar { border-radius: 27px; }
+.main-avatar { width: 100%; height: 100%; z-index: 2; position: relative; object-fit: cover; }
 
-.link-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 15px 5px;
-    text-decoration: none; color: white;
-    display: flex; flex-direction: column; align-items: center;
-    transition: 0.3s;
-}
+.name-gradient { font-size: 2.2rem; background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5)); }
+.bio-box { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px; font-size: 0.85rem; margin: 20px 0; border-left: 3px solid var(--neon-blue); color: #e0e0e0; }
 
-/* KHUNG CHỨA ICON (QUAN TRỌNG ĐỂ CÂN BẰNG) */
-.icon-box {
-    width: 45px; height: 45px;
-    margin-bottom: 8px;
-    display: flex; justify-content: center; align-items: center;
-    overflow: hidden; /* Cắt phần thừa của jpg */
-    border-radius: 10px; /* Bo nhẹ icon cho đẹp */
-}
+/* Grid 4 Ô vuông */
+.link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 25px 0; }
+.link-card { border-radius: 20px; height: 110px; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.link-card::after { border-radius: 17px; }
+.link-card:hover { transform: scale(1.05); transition: 0.3s; }
 
-.icon-box img {
-    width: 100%; height: 100%;
-    object-fit: contain; /* Đảm bảo icon nằm gọn trong ô 45px */
-}
+/* Sửa lỗi Icon */
+.icon-box { width: 45px; height: 45px; margin-bottom: 8px; z-index: 2; overflow: hidden; display: flex; justify-content: center; align-items: center; border-radius: 10px; }
+.icon-box img { width: 100%; height: 100%; object-fit: contain; }
 
-.link-card span { font-size: 0.8rem; font-weight: 600; opacity: 0.8; }
+.link-name { z-index: 2; color: white; font-weight: bold; font-size: 0.85rem; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
 
-.link-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary);
-}
+/* Liên hệ */
+.contact { padding: 60px 5%; }
+.contact-container { border-radius: 30px; max-width: 700px; margin: 0 auto; }
+.contact-inner-box { position: relative; z-index: 2; display: flex; flex-wrap: wrap; padding: 30px; gap: 20px; align-items: center; }
+.contact-left { flex: 1; text-align: center; color: white; }
+.contact-avatar { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--neon-blue); margin-bottom: 10px; }
+.contact-info-text p { font-size: 0.8rem; margin: 5px 0; }
+.divider { width: 1px; height: 100px; background: rgba(255,255,255,0.1); }
+.contact-right { flex: 1.5; }
+.contact-form { display: flex; flex-direction: column; gap: 10px; }
+.contact-form input, .contact-form textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px; color: white; border-radius: 8px; outline: none; }
+.btn-rgb { background: var(--neon-blue); border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; color: #02050a; }
 
-/* Buttons & Footer */
-.action-buttons { display: flex; gap: 10px; }
-.btn { flex: 1; padding: 12px; border-radius: 15px; text-decoration: none; font-size: 0.75rem; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
-.btn:hover { background: rgba(255, 255, 255, 0.1); }
-
-footer { position: absolute; bottom: 15px; font-size: 0.7rem; opacity: 0.4; }
-.snowflake { position: fixed; top: -10%; z-index: 5; pointer-events: none; animation: fall linear forwards; }
-@keyframes fall { 0% { top: -10%; opacity: 0; } 10% { opacity: 0.8; } 100% { top: 110%; opacity: 0; } }
+footer { padding: 30px; text-align: center; font-size: 0.75rem; color: white; opacity: 0.6; }
